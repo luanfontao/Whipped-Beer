@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - WhippedBeer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        header button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #dc3545;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        #welcome {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <button id="btn_logout">Logout</button>
+    </header>
+    <main>
+        <div id="welcome">Carregando...</div>
+
+        <div class="card">
+            <h2>Temperatura ao longo do tempo</h2>
+            <canvas id="tempChart"></canvas>
+        </div>
+
+    </main>
+
+    <script>
+        const API_BASE = 'https://www.api.whippedbeer.grmtechs.com';
+        const token = sessionStorage.getItem('authToken');
+        if (!token) {
+            window.location.href = '/admin';
+        }
+
+        document.getElementById('welcome').textContent = 'Bem-vindo(a) ao WhippedBeer!';
+
+        let tempChart;
+
+
+        function initChart() {
+            const ctx = document.getElementById('tempChart').getContext('2d');
+            tempChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [], datasets: [{
+                        label: 'Temperatura (°C)',
+                        data: [],
+                        fill: false,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: { title: { display: true, text: 'Data' } },
+                        y: { title: { display: true, text: 'Temperatura (°C)' } }
+                    },
+                    responsive: true,
+                    plugins: { legend: { display: true } }
+                }
+            });
+        }
+
+        async function updateTemperatureChart() {
+            try {
+                const res = await fetch(`${API_BASE}/dados`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!res.ok) throw new Error('Falha ao obter dados de temperatura');
+                const dados = await res.json();
+
+                tempChart.data.labels = dados.map(item => item.criadoEm);
+                tempChart.data.datasets[0].data = dados.map(item => item.temperatura);
+                tempChart.update();
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        initChart();
+        updateTemperatureChart();
+        setInterval(updateTemperatureChart, 2000);
+
+        document.getElementById('btn_logout').addEventListener('click', () => {
+            sessionStorage.removeItem('authToken');
+            window.location.href = '/';
+        });
+    </script>
+</body>
+
+</html>
