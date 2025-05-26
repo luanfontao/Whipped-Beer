@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O Projeto</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+
+        }
+
+
+        section {
+            /* margin-bottom: 2rem;
+            color: #333;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05); */
+            text-align: justify;
+            margin-top: 2rem;
+        }
+
+        p {
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            color: brown;
+        }
+
+        h2 {
+            color: yellow;
+        }
+
+        h3 {
+            color: coral;
+        }
+
+        .card {
+            margin: 0 0.75rem 0.75rem 1rem;
+        }
+
+        b {
+            color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="page">
+            <header>
+                <div class="logo">
+                    <img src="../assets/logo-wb-pequeno.png" alt="Logo Whipped Beer Pequeno" />
+                    <span>WHIPPED BEER</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">INÍCIO</a></li>
+                        <li><a href="quem-somos.html"">QUEM SOMOS</a></li>
+                        <li><a href=" #">O PRJETO</a></li>
+                        <li><a href="nossa-cerveja.html">NOSSA CERVEJA</a></li>
+                        <li><a href="#">SE DIVIRTA</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main class="product-section">
+                <h1>Projeto Integrador – Whipped Beer</h1>
+
+                <section>
+                    <h2>Introdução</h2>
+                    <p>
+                        Semestralmente, os alunos do Centro Universitário Senac, dos cursos de Engenharia da Computação
+                        e Engenharia de Produção, recebem o desafio de desenvolver um <b>Projeto Integrador</b>. O
+                        objetivo é
+                        estimular o trabalho em equipe e aplicar os conhecimentos das disciplinas do período em um
+                        projeto prático, que conecte o conteúdo acadêmico à realidade do mundo profissional.
+                    </p>
+                    <p>
+                        No 3º semestre, foi proposto o desenvolvimento de uma solução para auxiliar o processo de
+                        produção de cerveja artesanal. A proposta consistia na criação de um <b>sistema eletrônico capaz
+                            de
+                            monitorar e controlar automaticamente a temperatura</b>, respeitando a rampa térmica exigida
+                        durante
+                        a fabricação da cerveja. Em resumo: o circuito deveria acionar e desligar uma carga (um fogão
+                        elétrico, por exemplo) de acordo com a temperatura lida em tempo real, mantendo os processos
+                        térmicos dentro dos parâmetros ideais.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Fabricação de Cerveja Artesanal</h2>
+                    <p>
+                        Após a apresentação do projeto, tivemos uma introdução prática e teórica sobre a fabricação de
+                        cerveja artesanal, ministrada pela mestre-cervejeira Danielle dos Santos Mingatos, sócia da Cia
+                        de Brassagem Brasil. Durante sua palestra, ela nos explicou os principais processos envolvidos
+                        na produção, os ingredientes utilizados e os cuidados técnicos necessários. Ao final, os alunos
+                        puderam votar no estilo de cerveja a ser produzido, e a escolha majoritária foi a <b>Belgian
+                            Blond
+                            Ale</b>.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Fundamentos Técnicos</h2>
+                    <p>
+                        Durante as aulas da disciplina Ciência e Tecnologia Aplicada I, recebemos orientações técnicas
+                        sobre eletrônica aplicada, controle de potência e automação. Os professores Dr. Wagner Ludescher
+                        e Adriano Camargo de Luca apresentaram os fundamentos para controlar eletronicamente uma carga
+                        resistiva, utilizando sensores, optoacopladores e microcontroladores.
+                    </p>
+                    <p>Foi proposto o desenvolvimento de uma <b>placa de circuito impresso (PCB)</b> baseada em:
+                    </p>
+                    <ul>
+                        <li>Um <b>optoacoplador 4N25</b>, para detecção dos pulsos de zero-crossing da tensão alternada;
+                        </li>
+                        <li>Um <b>MOC3021</b>, para acionamento de um <b>TRIAC BTA16-600B</b>, responsável por controlar
+                            a entrega de
+                            potência à carga;</li>
+                        <li><b>Um sensor de temperatura DS18B20</b>, posicionado dentro da panela;</li>
+                        <li>E um <b>Arduino</b> (ou equivalente ESP8266), encarregado de realizar as leituras e o
+                            controle do
+                            sistema de aquecimento.</li>
+                    </ul>
+                    <p>
+                        O microcontrolador decidia o acionamento da carga (fogão elétrico) com base na leitura de
+                        temperatura realizada pelo sensor.
+                    </p>
+                </section>
+
+                <br />
+                <img src="../assets/pcb.png" style="border: 1.5px solid white;" />
+                <p>
+                    <small>Placa PCB desenvolvida pelo Professor Wagner Ludescher</small>
+                </p>
+
+                <section>
+                    <h2>Desenvolvimento Web e Aplicações na Nuvem</h2>
+                    <p>
+                        Simultaneamente, o professor Rafael Pereira nos introduziu às tecnologias web: HTML, CSS,
+                        JavaScript e também ao conceito de hospedagem em nuvem. A proposta era desenvolver <b>um website
+                            que apresentasse o projeto</b> de forma profissional e interativa, com acesso público e uma
+                        seção
+                        privada de dashboard, onde as leituras de temperatura pudessem ser monitoradas em tempo real.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Nova Solução Proposta: Acionamento via Relé</h2>
+                    <p>
+                        Conforme nos aproximávamos da brassagem real, uma segunda alternativa de placa foi proposta, com
+                        menor complexidade de implementação: uma placa com <b>acionamento da carga por relé</b>. Essa
+                        versão,
+                        mais simples que o controle via TRIAC, realizava o <b>ligamento e desligamento do fogão
+                            elétrico</b>
+                        com base na leitura da temperatura, conforme o líquido se aproximasse da temperatura alvo de
+                        cada etapa.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Receita da Cerveja – Belgian Blond Ale</h2>
+                    <ul>
+                        <li><strong>OG:</strong> 1,067 | <strong>FG:</strong> 1,016 | <strong>ABV:</strong> 6,5% |
+                            <strong>IBU:</strong> 15 | <strong>EBC:</strong> 14
+                        </li>
+                    </ul>
+                    <p><strong>Maltes e Adjuntos:</strong></p>
+                    <ul>
+                        <li>Malte Pilsen – 0,65 kg</li>
+                        <li>Malte Cara Pils – 0,07 kg</li>
+                        <li>Malte Melanoidina – 0,05 kg</li>
+                        <li>Flocos de Aveia – 0,05 kg</li>
+                        <li>Açúcar de Cana – 0,075 kg</li>
+                        <li>Casca de Laranja Bahia – 3 g</li>
+                        <li>Semente de Coentro – 2 g</li>
+                    </ul>
+                    <p><strong>Lúpulo:</strong> Tettnang – 8 g</p>
+                    <p><strong>Fermento:</strong> SafAle S33 – 2,5 g</p>
+                    <p><strong>Água Total:</strong> 5,7 L (inicial + sparge)</p>
+                    <p><strong>Rampas de Mostura:</strong></p>
+                    <ul>
+                        <li>42°C por 10 min</li>
+                        <li>50°C por 10 min</li>
+                        <li>66°C por 60 min</li>
+                        <li>78°C por 10 min</li>
+                    </ul>
+                    <p><strong>Fervura:</strong> 60 min com adições conforme cronograma</p>
+                </section>
+
+                <section>
+                    <h2>Coleta de Dados e Automação</h2>
+                    <p>
+                        Durante o processo de brassagem, realizamos a coleta de dados (temperatura x horário) conforme
+                        instruído. No nosso caso, utilizamos um <b>ESP8266 como microcontrolador</b>, o qual foi
+                        programado
+                        para disponibilizar uma página HTML local que permitia acompanhar as leituras do sensor de
+                        temperatura em tempo real.
+                    </p>
+
+                    <p>Além disso, desenvolvemos um servidor com rotas de backend em Java, que recebia requisições POST
+                        autenticadas contendo os dados coletados pelo ESP. Esses dados eram então armazenados em um
+                        banco de dados <b>MySQL</b>, formando o histórico completo do processo térmico da brassagem.</p>
+
+                    <p>Ao final da brassagem, resfriamos o mosto até 20°C e o transferimos para o fermentador com
+                        airlock, onde permaneceu por 20 dias para fermentação.</p>
+                </section>
+
+                <section>
+                    <h2>Apresentação Final</h2>
+                    <p>
+                        Após a fermentação e o envase, apresentamos a cerveja produzida e todo o projeto durante a
+                        <b>Semana das Engenharias</b>, evento tradicional do Senac que reúne os trabalhos desenvolvidos
+                        por
+                        todos os semestres dos cursos de Engenharia.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Sobre o Grupo – Whipped Beer</h2>
+                    <p>
+                        Nosso grupo foi formado por João Henrique Teixeira Ferreira, Gustavo Germiniani, Gabriel da
+                        Silva Martins, Diego Ragozini Silva, Luan Fontão Ongaratto e Daniel Fincati Farath. Batizamos
+                        nosso projeto de <b>Whipped Beer</b>.
+                    </p>
+                    <p>
+                        Optamos por desenvolver a versão do circuito com <b>acionamento por relé</b>, por sua
+                        simplicidade e
+                        confiabilidade no controle on/off da carga.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Estrutura Eletrônica
+                    </h2>
+                    <p>
+                        Optamos por desenvolver a versão do circuito com acionamento por relé, por sua simplicidade e
+                        confiabilidade no controle on/off da carga.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Tecnologias Utilizadas</h2>
+
+                    <div class="card">
+                        <h3>Software:</h3>
+                        <ul>
+                            <li>Arduino IDE – programação do ESP8266</li>
+                            <li>Frontend – HTML, CSS, JavaScript (público + dashboard)</li>
+                            <li>Backend – Java (Spring Boot), gerenciamento de rotas e geração de gráficos</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Microcontrolador:</h3>
+                        <ul>
+                            <li>Utilizamos o <b>ESP8266</b>, programado para ler a temperatura via <b>sensor
+                                    DS18B20</b>, alocado
+                                dentro
+                                da panela e protegido por tubo de cobre. A leitura era exibida em uma interface web
+                                local
+                                hospedada pelo próprio ESP. Também era possível definir o setpoint e acionar o relé
+                                automaticamente conforme o líquido se aproximava da temperatura desejada.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Integração com Servidor:</h3>
+                        <ul>
+                            <li>As leituras eram enviadas via POST para nosso servidor, gerenciado com <b>NGINX</b>, e
+                                armazenadas
+                                no banco de dados <b>MySQL</b>.</li>
+                            <li>Desenvolvemos um sistema de autenticação via tokens para acesso às rotas privadas do
+                                dashboard.</li>
+                            <li>Toda a comunicação foi protegida com <b>criptografia SSL</b> utilizando <b>Certbot</b>.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Website:</h3>
+                        <p>Nosso website é dividido em:</p>
+                        <ul>
+                            <li>Páginas públicas: apresentando o projeto, equipe e etapas da produção.</li>
+                            <li>Dashboard privado: exibição de gráficos e dados em tempo real, acessado apenas com login
+                                e
+                                senha.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+        <div class="page-gradient-bottom"></div>
+    </div>
+</body>
+
+</html>
