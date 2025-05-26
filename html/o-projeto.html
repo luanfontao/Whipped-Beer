@@ -59,6 +59,20 @@
         b {
             color: greenyellow;
         }
+
+        img.descr {
+            object-fit: contain;
+            border: 1.5px solid white;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+        }
+
+        .imagem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -67,8 +81,10 @@
         <div class="page">
             <header>
                 <div class="logo">
-                    <img src="../assets/logo-wb-pequeno.png" alt="Logo Whipped Beer Pequeno" />
-                    <span>WHIPPED BEER</span>
+                    <a class="link_logo" href="../index.html">
+                        <img src="../assets/logo-wb-pequeno.png" alt="Logo Whipped Beer Pequeno" />
+                        <span>WHIPPED BEER</span>
+                    </a>
                 </div>
                 <nav>
                     <ul>
@@ -145,11 +161,13 @@
                     </p>
                 </section>
 
-                <br />
-                <img src="../assets/pcb.png" style="border: 1.5px solid white;" />
-                <p>
-                    <small>Placa PCB desenvolvida pelo Professor Wagner Ludescher</small>
-                </p>
+                <div class="imagem">
+                    <br />
+                    <img class="descr" src="../assets/pcb.png" />
+                    <p>
+                        <small>Placa PCB desenvolvida pelo Professor Wagner Ludescher</small>
+                    </p>
+                </div>
 
                 <section>
                     <h2>Desenvolvimento Web e Aplicações na Nuvem</h2>
@@ -254,6 +272,15 @@
                         Optamos por desenvolver a versão do circuito com acionamento por relé, por sua simplicidade e
                         confiabilidade no controle on/off da carga.
                     </p>
+
+                    <br />
+                    <div class="imagem">
+                        <img class="descr" src="../assets/placa.jpg" />
+                        <p>
+                            <small>Placa PCB desenvolvida pelo Professor Wagner Ludescher</small>
+                        </p>
+                    </div>
+
                 </section>
 
                 <section>
