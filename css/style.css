@@ -513,3 +513,602 @@ nav ul li a:hover::after {
   text-decoration: none;
   gap: 1rem;
 }
+
+/* ============================================= */
+/* ESTILOS ADICIONAIS PARA PÁGINAS DE CONTEÚDO   */
+/* (O Projeto, Quem Somos, etc.)                 */
+/* ============================================= */
+
+/* Títulos de Seção */
+.product-section h2,
+.content-section h2 { /* .content-section é uma sugestão para blocos de conteúdo genéricos */
+  font-size: 32px; /* Ajuste conforme necessário */
+  color: #ffd700; /* Cor dourada para destaque */
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left; /* Para seções de texto corrido */
+}
+
+.product-section h3,
+.content-section h3 {
+  font-size: 24px; /* Ajuste conforme necessário */
+  color: #f0f0f0; /* Um branco um pouco menos intenso ou o mesmo dourado */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Parágrafos e Listas em Seções de Conteúdo */
+.product-section section p, /* Para parágrafos dentro das <section> de 'o-projeto.html' */
+.product-section p,
+.content-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 1.2rem;
+  color: #e0e0e0; /* Cor de texto principal para leitura */
+}
+
+.product-section section ul,
+.product-section ul,
+.content-section ul {
+  padding-left: 1.5rem; /* Levemente aumentado do inline */
+  margin-bottom: 1.2rem;
+  list-style-type: disc; /* Ou 'circle' ou outro de sua preferência */
+}
+
+.product-section section li,
+.product-section li,
+.content-section li {
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+  color: #d4d4d4;
+}
+
+/* Texto em Negrito (para destaques como em 'o-projeto.html') */
+.product-section b,
+.content-section b {
+  color: #ffd700; /* Dourado para ênfase */
+  font-weight: bold;
+}
+
+/* Container para Imagens de Conteúdo (o-projeto.html) */
+.content-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5rem 0;
+}
+
+.content-image-container .content-image { /* Substitui a antiga classe '.descr' */
+  object-fit: contain;
+  border: 2px solid #555; /* Borda mais sutil */
+  max-width: 80%;     /* Responsividade */
+  height: auto;
+  background-color: transparent;
+  margin-bottom: 0.8rem;
+  border-radius: 4px; /* Leve arredondamento */
+}
+
+.content-image-container small { /* Legendas de imagens */
+  font-size: 0.9em;
+  color: #bbb;
+  text-align: center;
+}
+
+/* Estilos para a Tabela de Integrantes (quem-somos.html) */
+.integrantes-table {
+  width: 100%;
+  border-spacing: 1.5rem 1rem; /* Ajustado do inline */
+  margin-top: 2rem;
+  table-layout: fixed; /* Ajuda na responsividade das colunas */
+}
+
+.integrantes-table td {
+  vertical-align: top;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.03); /* Um fundo sutil para cada card de membro */
+  border-radius: 8px;
+}
+
+.integrantes-table img.perfil {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border: 3px solid #ffd700; /* Dourado */
+  border-radius: 50%;
+  margin-top: 0.5rem; /* Ajustado */
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.integrantes-table h2 { /* Nomes dos integrantes */
+  font-size: 22px;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.integrantes-table p { /* Descrição e links GitHub */
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+}
+
+.integrantes-table p a,
+.product-section p a, /* Para links em parágrafos de texto gerais */
+.content-section p a {
+  color: #ffd700; /* Dourado */
+  text-decoration: none; /* Remover sublinhado padrão */
+  border-bottom: 1px dotted #ffd700; /* Sublinhado alternativo */
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.integrantes-table p a:hover,
+.product-section p a:hover,
+.content-section p a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Título Principal dentro de .product-section (Garantir Consistência) */
+.product-section > h1 {
+  font-size: 42px; /* Já definido no seu CSS original */
+  margin-bottom: 50px; /* Aumentar um pouco o espaço abaixo */
+  color: white;
+  text-align: center;
+  text-transform: uppercase; /* Para um visual mais impactante, se desejar */
+  letter-spacing: 1px; /* Se desejar */
+}
+
+/* Limitar largura do conteúdo textual para melhor legibilidade em telas grandes */
+.product-section > section, /* Para as seções dentro de 'o-projeto.html' */
+.content-section {
+  max-width: 800px; /* Ou o valor que achar mais adequado */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem; /* Espaçamento interno */
+  margin-bottom: 2rem; /* Espaço entre seções */
+}
+
+/* Adicione estas regras ao FINAL do seu style.css */
+
+/* Para telas menores que 768px (tablets em modo retrato e celulares maiores) */
+@media (max-width: 768px) {
+
+  /* Especificamente para a barra de overlay na index.html */
+  .hero-overlay-top {
+    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+    min-height: 60px; /* Garante uma altura mínima, se desejar (ajuste o valor) */
+  }
+
+  header {
+    flex-direction: column; /* Mantém o logo e a navegação empilhados */
+    align-items: center;   /* Centraliza o bloco do logo e o bloco da navegação */
+    padding: 15px 3vw;     /* Padding geral do header */
+  }
+
+  header .logo {
+    margin-bottom: 15px; /* Espaço entre o logo e a lista de navegação abaixo */
+  }
+
+  nav ul {
+    flex-direction: column; /* Mantém os links empilhados */
+    gap: 5px;              /* Espaço vertical MENOR entre os links */
+    align-items: center;   /* Centraliza os links na vertical */
+    width: 100%;           /* Faz a lista ocupar a largura para centralizar o texto dos links */
+    padding-left: 0;       /* Remove padding padrão de <ul> */
+    margin-top: 0;         /* Remove margem do topo se o logo já tem margin-bottom */
+  }
+
+  nav ul li {
+    width: 100%; /* Faz cada item da lista ocupar a largura */
+  }
+
+  nav ul li a {
+    display: block;      /* Faz o link ocupar todo o <li> para melhor área de toque */
+    padding: 8px 15px;   /* Padding interno nos links para espaçamento e toque */
+    text-align: center;  /* Centraliza o texto do link */
+    font-size: 16px;     /* Ajuste o tamanho da fonte conforme necessário */
+    border-radius: 4px;  /* Opcional: borda arredondada para os links */
+  }
+  
+  /* Opcional: Mudar o feedback visual no hover para mobile se o sublinhado não ficar bom */
+  nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Um leve destaque no fundo */
+  }
+
+  nav ul li a::after {
+    display: none; /* Remove o efeito de sublinhado no hover, que pode não se adequar bem aqui */
+  }
+
+  /* Cabeçalho e Navegação */
+  header {
+    flex-direction: column; /* Empilhar logo e navegação se necessário */
+    padding: 15px 3vw;
+  }
+
+  nav ul {
+    flex-direction: column; /* Empilhar os links da navegação */
+    gap: 15px; /* Reduzir o espaço entre os links */
+    align-items: center; /* Centralizar os links empilhados */
+    margin-top: 15px; /* Adicionar espaço se o header for empilhado */
+  }
+
+  nav ul li a {
+    font-size: 16px; /* Aumentar um pouco para toque, se empilhado */
+  }
+
+  /* Conteúdo Principal da Home (index.html) */
+  .main-content {
+    flex-direction: column; /* Empilhar seções .left e .right */
+    text-align: center; /* Centralizar texto na home */
+    padding-top: 50px; /* Ajustar espaçamento */
+  }
+
+  .main-content .left,
+  .main-content .right {
+    max-width: 100%; /* Ocupar toda a largura disponível */
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .main-content .right img {
+    max-width: 200px; /* Reduzir um pouco o logo grande se necessário */
+  }
+
+  h1 { /* Títulos principais */
+    font-size: 36px; /* Reduzir tamanho da fonte */
+  }
+
+  .product-section h1 { /* Títulos de seção de produto */
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .product-section h2, .content-section h2 {
+    font-size: 26px; /* Reduzir subtítulos */
+  }
+  .product-section h3, .content-section h3 {
+    font-size: 20px;
+  }
+
+
+  /* Cards de Produto (nossa-cerveja.html, whipped-ale.html) */
+  .product-card {
+    flex-direction: column; /* Empilhar imagem e informações do produto */
+    gap: 20px;
+  }
+
+  .product-card img {
+    width: 80%; /* Fazer a imagem ocupar uma porcentagem da largura */
+    max-width: 200px; /* Mas não maior que X (opcional) */
+  }
+
+  .product-info {
+    max-width: 100%; /* Permitir que o texto ocupe toda a largura */
+    text-align: center; /* Centralizar informações do produto */
+  }
+  
+  .product-actions {
+    justify-content: center; /* Centralizar botões de ação */
+  }
+
+  /* Card "Em Breve" */
+  .coming-soon-card {
+    max-width: 90%; /* Usar porcentagem para largura */
+    padding: 30px 15px;
+  }
+
+  /* Tabela de Integrantes (quem-somos.html) */
+  .integrantes-table,
+  .integrantes-table td {
+    display: block; /* Fazer cada célula da tabela se comportar como um bloco */
+    width: 100%;    /* Ocupar toda a largura */
+    margin-bottom: 20px; /* Espaço entre os cards de integrantes */
+  }
+  
+  .integrantes-table {
+     border-spacing: 0; /* Remover espaçamento da tabela original */
+  }
+
+  .integrantes-table img.perfil {
+    width: 100px; /* Ajustar tamanho da foto do perfil */
+    height: 100px;
+  }
+
+  /* Seções de conteúdo em 'o-projeto.html' */
+  .product-section > section,
+  .content-section {
+    max-width: 100%; /* Permitir ocupar toda a largura */
+    padding: 1rem 5vw; /* Ajustar padding lateral */
+  }
+  
+  .content-image-container .content-image {
+    max-width: 90%; /* Imagens de conteúdo responsivas */
+  }
+
+  /* Rodapé com gradiente */
+  .page-gradient-bottom {
+    height: 60px; /* Pode diminuir um pouco se desejar */
+  }
+}
+
+/* Para telas ainda menores, como celulares em modo retrato */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px; /* Reduzir ainda mais os títulos */
+  }
+  
+  .product-section h1 {
+    font-size: 26px;
+  }
+
+  .product-section h2, .content-section h2 {
+    font-size: 22px;
+  }
+  
+  .product-section p, .content-section p, .integrantes-table p {
+    font-size: 15px; /* Ajustar tamanho do parágrafo para leitura */
+  }
+
+  .logo span {
+    font-size: 18px; /* Reduzir nome do logo */
+  }
+
+  .logo img {
+    width: 30px; /* Reduzir imagem do logo */
+  }
+  
+  .product-actions .botao-translucido {
+    padding: 8px 15px; /* Diminuir padding dos botões */
+    font-size: 14px;
+  }
+}
+
+/* Ajuste para centralizar texto no card "Em Breve" */
+.coming-soon-card h2,
+.coming-soon-card p {
+  text-align: center;
+}
+
+/* Estilização da Ficha Técnica Detalhada */
+.page .product-card { /* Ajuste para a página de detalhes do produto */
+  align-items: flex-start; /* Alinha o topo da imagem com o topo do bloco de informações */
+  justify-content: center; /* Mantém centralizado se houver espaço extra */
+  gap: 50px; /* Aumenta um pouco o espaço entre imagem e texto */
+}
+
+.product-info { /* Container da ficha técnica */
+    max-width: 600px; /* Pode aumentar um pouco a largura máxima para a ficha detalhada */
+}
+
+.product-info h2 { /* Título "Ficha Técnica" */
+  color: #ffd700;    /* Cor dourada, como outros títulos importantes */
+  margin-bottom: 25px;
+  font-size: 1.8em;   /* Um pouco maior */
+  text-align: left;   /* Mantém à esquerda ou mude para 'center' se preferir */
+}
+
+.ficha-tecnica-group {
+  margin-bottom: 30px; /* Espaço entre os grupos de informação */
+}
+
+.ficha-tecnica-group h3 {
+  font-size: 1.2em;   /* Tamanho para os subtítulos dos grupos */
+  color: #e0e0e0;     /* Cor para os subtítulos */
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #444; /* Linha sutil para separar o subtítulo do conteúdo */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ficha-tecnica-group ul {
+  list-style-type: none; /* Remove os marcadores padrão da lista */
+  padding-left: 0;       /* Remove o padding padrão da lista */
+}
+
+.ficha-tecnica-group li {
+  font-size: 0.95em; /* Tamanho da fonte para os itens da lista */
+  color: #cccccc;    /* Cor do texto dos detalhes */
+  margin-bottom: 10px;/* Espaço entre cada item da lista */
+  line-height: 1.65;  /* Melhora a legibilidade */
+}
+
+.ficha-tecnica-group li strong {
+  color: #f5f5f5;    /* Cor um pouco mais clara para os rótulos (Estilo, ABV, etc.) */
+  font-weight: 600;  /* Um pouco mais de peso na fonte se "Telegraf" tiver variações */
+  margin-right: 8px;  /* Espacinho depois do rótulo */
+}
+
+/* Estilo específico para o botão Comprar nesta página, se necessário */
+.product-info .botao-translucido.comprar-ficha {
+  margin-top: 25px;      /* Espaço acima do botão */
+  padding: 12px 25px;    /* Aumentar um pouco o padding do botão */
+  font-size: 1.05em;     /* Um pouco maior */
+}
+
+/* Ajustes responsivos para a Ficha Técnica (adicione dentro da sua @media (max-width: 768px)) */
+@media (max-width: 768px) {
+  .page .product-card { /* Na página de detalhes do produto */
+    flex-direction: column;
+    align-items: center; /* Centraliza imagem e info quando empilhados */
+    gap: 30px;
+  }
+
+  .product-info {
+    max-width: 100%; /* Ocupa toda a largura no mobile */
+  }
+
+  .product-info h2 { /* "Ficha Técnica" */
+    text-align: center; /* Centraliza o H2 no mobile */
+    font-size: 1.6em;
+  }
+
+  .ficha-tecnica-group h3 {
+    font-size: 1.1em;
+  }
+
+  .ficha-tecnica-group li {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+  }
+
+  .product-info .botao-translucido.comprar-ficha {
+    display: block;       /* Faz o botão ocupar a largura disponível */
+    width: auto;          /* Largura automática ou defina uma porcentagem */
+    max-width: 280px;     /* Limita a largura máxima do botão */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+/* Estilos para a página "Se Divirta" - Jogo Whipped Process */
+
+.game-description {
+  max-width: 800px; /* Limita a largura do texto de descrição para melhor leitura */
+  margin: 30px auto 50px auto; /* Centraliza e adiciona margens */
+  text-align: justify; /* Justifica o texto da descrição */
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+
+.game-description p {
+  margin-bottom: 1em;
+}
+
+.game-description em { /* Para a nota sobre a descrição ser aleatória */
+  color: #aaa;
+  font-size: 0.9em;
+}
+
+.game-element-showcase {
+  margin-top: 40px;
+  margin-bottom: 60px; /* Mais espaço entre os elementos do jogo */
+  text-align: center;    /* Centraliza o título estilizado e a imagem */
+}
+
+.game-element-showcase .stylized-title { /* Títulos para as imagens do jogo */
+  color: #ffd700;         /* Cor dourada, padrão do site */
+  font-size: 1.6em;       /* Tamanho do título */
+  margin-bottom: 20px;    /* Espaço abaixo do título, antes da imagem */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #555; /* Linha sutil abaixo do título */
+  display: inline-block; /* Para que a borda não ocupe toda a largura */
+}
+
+.game-element-showcase .game-image-placeholder {
+  max-width: 100%;          /* Imagem responsiva */
+  width: auto;              /* Largura automática respeitando o max-width do placeholder */
+  max-height: 450px;        /* Limita a altura máxima da imagem de placeholder */
+  height: auto;
+  border: 3px solid #444;   /* Borda para a imagem */
+  border-radius: 8px;       /* Cantos arredondados */
+  margin-bottom: 10px;      /* Espaço abaixo da imagem, antes da legenda */
+  background-color: #2a2a2a;/* Cor de fundo para o placeholder caso a imagem não carregue */
+  display: block;           /* Para que margin:auto funcione se tiver width fixa */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-element-showcase .image-caption {
+  font-size: 0.9em;
+  color: #bbb;
+  font-style: italic;
+  display: inline-block; /* Faz o parágrafo ocupar apenas a largura do seu texto */
+  /* text-align: center; /* O texto interno já será centralizado se a legenda tiver várias linhas, devido à herança do pai */
+  margin-top: 5px; /* Pequena margem acima da legenda, se necessário */
+}
+
+/* Ajustes responsivos para a página "Se Divirta" (adicione dentro da sua @media (max-width: 768px)) */
+@media (max-width: 768px) {
+  .game-description {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-left: 3vw; /* Adiciona padding lateral para o texto não colar nas bordas */
+    padding-right: 3vw;
+  }
+
+  .game-element-showcase .stylized-title {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+
+  .game-element-showcase {
+    margin-bottom: 40px;
+  }
+}
+/* Você já tem estilos para .game-description, pode ajustá-los ou adicionar estes: */
+.game-description {
+  max-width: 800px;
+  margin: 30px auto 50px auto;
+  text-align: left; /* Mudei para left para parágrafos, mas h2 pode ser centralizado abaixo */
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+
+.game-description p {
+  margin-bottom: 1.2em; /* Um pouco mais de espaço entre parágrafos */
+  text-align: justify;  /* Justificar o texto dos parágrafos longos */
+}
+
+.game-description strong { /* Para o título do jogo no primeiro parágrafo */
+    color: #ffd700; /* Dourado */
+}
+
+.game-description h2 {
+  color: #ffd700; /* Cor dourada para os subtítulos */
+  font-size: 1.6em; /* Tamanho um pouco maior para os H2 */
+  margin-top: 40px;   /* Mais espaço acima dos subtítulos */
+  margin-bottom: 15px;
+  text-align: center; /* Centralizar os H2 */
+  /* border-bottom: 1px solid #555; /* Opcional: uma linha separadora sutil */
+  /* padding-bottom: 10px; */
+}
+
+.game-description ol {
+  margin-left: 20px; /* Adiciona um recuo à lista */
+  margin-bottom: 25px;
+  padding-left: 25px; /* Espaço para os números da lista */
+}
+
+.game-description ol li {
+  margin-bottom: 10px; /* Espaço entre os itens da lista */
+  line-height: 1.6;
+  color: #ccc; /* Cor para o texto dos itens da lista */
+}
+
+.game-description ol li::marker { /* Estiliza os números/marcadores da lista */
+  color: #ffd700; /* Números da lista em dourado */
+  font-weight: bold;
+}
+
+.game-description ol li strong { /* Para os títulos das categorias/regras dentro dos LIs */
+  color: #f0f0f0; /* Cor mais clara para o texto em negrito dentro dos itens da lista */
+  font-weight: 600;
+}
+
+.game-description .game-cta { /* Parágrafo final de chamada para ação */
+  font-weight: 500; /* Normal ou bold, conforme preferir */
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.1em;
+  color: #f5f5f5;
+}
+
+/* Ajustes responsivos para a descrição do jogo (dentro de @media (max-width: 768px)) */
+@media (max-width: 768px) {
+  .game-description h2 {
+    font-size: 1.4em;
+    margin-top: 30px;
+  }
+  .game-description ol {
+    margin-left: 5px;
+    padding-left: 20px;
+  }
+}
